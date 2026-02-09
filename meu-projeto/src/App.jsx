@@ -6,25 +6,24 @@ import Contact from "./pages/Contact";
 import Company from "./pages/Company";
 import NewProject from "./pages/NewProject";
 import Container from "./components/layouts/Container";
+import NavBar from "./components/layouts/Navbar";
+import Footer from "./components/layouts/Footer";
+import Projects from "./pages/Projects";
 
 export default function App() {
   return (
     <BrowserRouter>
-      <nav>
-        <Link to="/home">Home</Link> <Link to="/company">Company</Link>{" "}
-        <Link to="/contact">Contact</Link>{" "}
-        <Link to="/newproject">Novo Projeto</Link>
-      </nav>
-
+      <NavBar />
       <Routes>
         <Route element={<Container customClass="min_height" />}>
-          <Route path="/home" element={<Home />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/projects" element={<Projects />} />
           <Route path="/company" element={<Company />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/newproject" element={<NewProject />} />
         </Route>
       </Routes>
-      <p>Footer</p>
+      <Footer />
     </BrowserRouter>
   );
 }
