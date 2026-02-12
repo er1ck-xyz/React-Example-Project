@@ -39,7 +39,7 @@ export default function Projects() {
       },
     })
       .then((resp) => resp.json())
-      .then((data) => {
+      .then(() => {
         setProjects(projects.filter((project) => project.id !== id));
       })
       .catch((err) => console.log(err));
